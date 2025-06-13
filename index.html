@@ -5,31 +5,41 @@
   <title>Nosso Amor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Arial', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
+      background: url('scr/umdiamagicov3.png') center center / contain no-repeat fixed;
+      background-color: #000;
+      color: #fff;
       text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     header {
       padding: 20px;
-      background-color: #ffc0cb;
-    }
-
-    .spotify {
-      margin: 20px 0;
+      background-color: rgba(255, 192, 203, 0.8);
+      color: #333;
+      border-bottom: 2px solid #fff;
     }
 
     .carousel-container {
       position: relative;
       max-width: 400px;
       aspect-ratio: 3/4;
-      margin: 0 auto;
+      margin: 20px auto;
       overflow: hidden;
       border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
     }
 
     .carousel-slide {
@@ -60,12 +70,10 @@
       background: none;
       color: white;
       border: none;
-      padding: 0;
       cursor: pointer;
-      transition: opacity 0.5s;
       z-index: 2;
       text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-      opacity: 1;
+      transition: opacity 0.5s;
     }
 
     .arrow.left {
@@ -81,46 +89,41 @@
       pointer-events: none;
     }
 
-    .recado {
+    .spotify {
+      margin: 30px 0;
+    }
+
+    .recado, .historia {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #333;
       margin: 30px auto;
-      max-width: 600px;
+      max-width: 700px;
       padding: 20px;
-      background-color: #ffe4e1;
       border-radius: 15px;
       font-size: 1.1rem;
-    }
-
-    .linha-tempo {
-      margin: 40px auto;
-      max-width: 600px;
-      padding: 20px;
-      background-color: #fffafa;
-      border-left: 5px solid #ffc0cb;
       text-align: left;
-      border-radius: 10px;
     }
 
-    .linha-tempo h2 {
+    .historia h2 {
       text-align: center;
-      color: #d6336c;
+      margin-bottom: 15px;
     }
 
-    .evento {
-      margin: 20px 0;
-      padding-left: 15px;
+    .historia ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .historia li {
+      margin-bottom: 10px;
+      padding-left: 10px;
       position: relative;
     }
 
-    .evento::before {
+    .historia li::before {
       content: "❤️";
       position: absolute;
-      left: -30px;
-      top: 0;
-    }
-
-    .data {
-      font-weight: bold;
-      color: #c2185b;
+      left: -20px;
     }
   </style>
 </head>
@@ -135,7 +138,6 @@
     <img src="scr/foto1.jpg" class="carousel-slide active" alt="Foto 1">
     <img src="scr/foto2.jpg" class="carousel-slide" alt="Foto 2">
     <img src="scr/foto3.jpg" class="carousel-slide" alt="Foto 3">
-    <img src="scr/foto4.jpg" class="carousel-slide" alt="Foto 4">
     <img src="scr/foto5.jpg" class="carousel-slide" alt="Foto 5">
     <img src="scr/foto6.jpg" class="carousel-slide" alt="Foto 6">
     <img src="scr/foto7.jpg" class="carousel-slide" alt="Foto 7">
@@ -154,15 +156,11 @@
     <img src="scr/foto20.jpeg" class="carousel-slide" alt="Foto 20">
     <img src="scr/foto21.jpeg" class="carousel-slide" alt="Foto 21">
     <img src="scr/foto22.jpg" class="carousel-slide" alt="Foto 22">
-    <img src="scr/foto23.jpeg" class="carousel-slide" alt="Foto 23">
-    <img src="scr/foto24.jpg" class="carousel-slide" alt="Foto 24">
-    <img src="scr/foto25.jpg" class="carousel-slide" alt="Foto 25">
 
     <!-- VÍDEOS -->
     <video class="carousel-slide" controls>
       <source src="scr/video.mp4" type="video/mp4">
     </video>
-
     <video class="carousel-slide" controls>
       <source src="scr/videofavorito.mp4" type="video/mp4">
     </video>
@@ -187,17 +185,19 @@
     </p>
   </div>
 
-  <div class="linha-tempo">
+  <div class="historia">
     <h2>Um Pouco da Nossa História</h2>
-    <div class="evento"><span class="data">24/06/2024</span> - Aniversário de Luísa e nossas primeiras palavras um com outro</div>
-    <div class="evento"><span class="data">19/09/2024</span> - Primeiro Encontro (Academia)</div>
-    <div class="evento"><span class="data">10/10/2024</span> - Segundo Encontro, Primeiro Filme (Coringa)</div>
-    <div class="evento"><span class="data">31/10/2024</span> - Primeiro beijo na bochecha, Terceiro encontro, segundo filme (Todo Tempo que Temos)</div>
-    <div class="evento"><span class="data">13/11/2024</span> - Primeiro beijo, Quarto encontro, terceiro filme (Ainda estou aqui)</div>
-    <div class="evento"><span class="data">15/11/2024</span> - Primeira vez indo na casa dela e conhecendo a mãe</div>
-    <div class="evento"><span class="data">21/11/2024</span> - Primeiro almoço juntos, Quinto encontro, quarto filme (Wicked)</div>
-    <div class="evento"><span class="data">01/12/2024</span> - Sexto encontro, andando pela praia</div>
-    <div class="evento"><span class="data">02/12/2024</span> - Sétimo encontro, quinto filme (Relatos Selvagens vulgo Gabriel Pasternak) • Pedido Oficial de Namoro •</div>
+    <ul>
+      <li>24/06/2024 - Aniversário de Luísa e nossas primeiras palavras um com outro</li>
+      <li>19/09/2024 - Primeiro Encontro (Academia)</li>
+      <li>10/10/2024 - Segundo Encontro, Primeiro Filme (Coringa)</li>
+      <li>31/10/2024 - Primeiro beijo na bochecha, Terceiro encontro, segundo filme (Todo Tempo que Temos)</li>
+      <li>13/11/2024 - Primeiro beijo, Quarto encontro, terceiro filme (Ainda Estou Aqui)</li>
+      <li>15/11/2024 - Primeira vez indo na casa dela e conhecendo a mãe</li>
+      <li>21/11/2024 - Primeiro almoço juntos, Quinto encontro e quarto filme (Wicked)</li>
+      <li>01/12/2024 - Sexto encontro, passeio na praia</li>
+      <li>02/12/2024 - Sétimo encontro, quinto filme (Relatos Selvagens), Pedido oficial de namoro</li>
+    </ul>
   </div>
 
   <script>
@@ -216,8 +216,10 @@
       });
 
       slideIndex = (index + slides.length) % slides.length;
+
       const currentSlide = slides[slideIndex];
       currentSlide.classList.add('active');
+
       if (currentSlide.tagName === 'VIDEO') {
         currentSlide.play();
       }
