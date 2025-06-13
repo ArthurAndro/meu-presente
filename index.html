@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Nosso Amor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      padding: 20px;
+      background-color: #ffc0cb;
+    }
+
+    .spotify {
+      margin: 20px 0;
+    }
+
+    .carousel-container {
+      position: relative;
+      max-width: 400px;
+      aspect-ratio: 3/4;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .carousel-slide.active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+      background: none;
+      color: white;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: opacity 0.5s;
+      z-index: 2;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+      opacity: 1;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    .arrow.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .recado {
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #ffe4e1;
+      border-radius: 15px;
+      font-size: 1.1rem;
+    }
+
+    .linha-tempo {
+      margin: 40px auto;
+      max-width: 600px;
+      padding: 20px;
+      background-color: #fffafa;
+      border-left: 5px solid #ffc0cb;
+      text-align: left;
+      border-radius: 10px;
+    }
+
+    .linha-tempo h2 {
+      text-align: center;
+      color: #d6336c;
+    }
+
+    .evento {
+      margin: 20px 0;
+      padding-left: 15px;
+      position: relative;
+    }
+
+    .evento::before {
+      content: "❤️";
+      position: absolute;
+      left: -30px;
+      top: 0;
+    }
+
+    .data {
+      font-weight: bold;
+      color: #c2185b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nosso Amor ❤️</h1>
+  </header>
+
+  <div class="carousel-container" id="carousel">
+    <!-- FOTOS -->
+    <img src="scr/foto1.jpg" class="carousel-slide active" alt="Foto 1">
+    <img src="scr/foto2.jpg" class="carousel-slide" alt="Foto 2">
+    <img src="scr/foto3.jpg" class="carousel-slide" alt="Foto 3">
+    <img src="scr/foto4.jpg" class="carousel-slide" alt="Foto 4">
+    <img src="scr/foto5.jpg" class="carousel-slide" alt="Foto 5">
+    <img src="scr/foto6.jpg" class="carousel-slide" alt="Foto 6">
+    <img src="scr/foto7.jpg" class="carousel-slide" alt="Foto 7">
+    <img src="scr/foto8.jpg" class="carousel-slide" alt="Foto 8">
+    <img src="scr/foto9.jpg" class="carousel-slide" alt="Foto 9">
+    <img src="scr/foto10.jpeg" class="carousel-slide" alt="Foto 10">
+    <img src="scr/foto11.jpeg" class="carousel-slide" alt="Foto 11">
+    <img src="scr/foto12.jpg" class="carousel-slide" alt="Foto 12">
+    <img src="scr/foto13.jpg" class="carousel-slide" alt="Foto 13">
+    <img src="scr/foto14.jpg" class="carousel-slide" alt="Foto 14">
+    <img src="scr/foto15.jpg" class="carousel-slide" alt="Foto 15">
+    <img src="scr/foto16.jpg" class="carousel-slide" alt="Foto 16">
+    <img src="scr/foto17.jpeg" class="carousel-slide" alt="Foto 17">
+    <img src="scr/foto18.jpeg" class="carousel-slide" alt="Foto 18">
+    <img src="scr/foto19.jpeg" class="carousel-slide" alt="Foto 19">
+    <img src="scr/foto20.jpeg" class="carousel-slide" alt="Foto 20">
+    <img src="scr/foto21.jpeg" class="carousel-slide" alt="Foto 21">
+    <img src="scr/foto22.jpg" class="carousel-slide" alt="Foto 22">
+    <img src="scr/foto23.jpeg" class="carousel-slide" alt="Foto 23">
+    <img src="scr/foto24.jpg" class="carousel-slide" alt="Foto 24">
+    <img src="scr/foto25.jpg" class="carousel-slide" alt="Foto 25">
+
+    <!-- VÍDEOS -->
+    <video class="carousel-slide" controls>
+      <source src="scr/video.mp4" type="video/mp4">
+    </video>
+
+    <video class="carousel-slide" controls>
+      <source src="scr/videofavorito.mp4" type="video/mp4">
+    </video>
+
+    <!-- SETAS -->
+    <button class="arrow left" onclick="mudarSlide(-1)" id="arrowLeft">❮</button>
+    <button class="arrow right" onclick="mudarSlide(1)" id="arrowRight">❯</button>
+  </div>
+
+  <div class="spotify">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5lQVMR35EhsUpnNKNEEtpR?utm_source=generator&theme=0" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+
+  <div class="recado">
+    <p>
+      Feliz Aniversário! Fazem exatamente 1 Ano desde nossa primeira conversa,<br>
+      fazem 6 meses (26 semanas) (182 dias) (4.368 horas) (262.080 min) (15.724.800 segundos)<br>
+      na qual eu vivenciei um dos melhores momentos da minha vida.<br><br>
+      Eu quero somente agradecer por tudo e pedir desculpas pelos meus diversos erros. <br>
+      Desculpa!<br><br>
+      É isso... Gratidão! 💖
+    </p>
+  </div>
+
+  <div class="linha-tempo">
+    <h2>Um Pouco da Nossa História</h2>
+    <div class="evento"><span class="data">24/06/2024</span> - Aniversário de Luísa e nossas primeiras palavras um com outro</div>
+    <div class="evento"><span class="data">19/09/2024</span> - Primeiro Encontro (Academia)</div>
+    <div class="evento"><span class="data">10/10/2024</span> - Segundo Encontro, Primeiro Filme (Coringa)</div>
+    <div class="evento"><span class="data">31/10/2024</span> - Primeiro beijo na bochecha, Terceiro encontro, segundo filme (Todo Tempo que Temos)</div>
+    <div class="evento"><span class="data">13/11/2024</span> - Primeiro beijo, Quarto encontro, terceiro filme (Ainda estou aqui)</div>
+    <div class="evento"><span class="data">15/11/2024</span> - Primeira vez indo na casa dela e conhecendo a mãe</div>
+    <div class="evento"><span class="data">21/11/2024</span> - Primeiro almoço juntos, Quinto encontro, quarto filme (Wicked)</div>
+    <div class="evento"><span class="data">01/12/2024</span> - Sexto encontro, andando pela praia</div>
+    <div class="evento"><span class="data">02/12/2024</span> - Sétimo encontro, quinto filme (Relatos Selvagens vulgo Gabriel Pasternak) • Pedido Oficial de Namoro •</div>
+  </div>
+
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const arrows = document.querySelectorAll('.arrow');
+    let hideTimeout;
+
+    function mostrarSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (slide.tagName === 'VIDEO') {
+          slide.pause();
+          slide.currentTime = 0;
+        }
+      });
+
+      slideIndex = (index + slides.length) % slides.length;
+      const currentSlide = slides[slideIndex];
+      currentSlide.classList.add('active');
+      if (currentSlide.tagName === 'VIDEO') {
+        currentSlide.play();
+      }
+    }
+
+    function mudarSlide(direcao) {
+      mostrarSlide(slideIndex + direcao);
+      resetArrowVisibility();
+    }
+
+    function hideArrows() {
+      arrows.forEach(arrow => arrow.classList.add('hidden'));
+    }
+
+    function showArrows() {
+      arrows.forEach(arrow => arrow.classList.remove('hidden'));
+    }
+
+    function resetArrowVisibility() {
+      showArrows();
+      clearTimeout(hideTimeout);
+      hideTimeout = setTimeout(hideArrows, 3000);
+    }
+
+    document.getElementById('carousel').addEventListener('mousemove', resetArrowVisibility);
+
+    window.onload = () => {
+      mostrarSlide(slideIndex);
+      resetArrowVisibility();
+    };
+  </script>
+
+</body>
+</html>
