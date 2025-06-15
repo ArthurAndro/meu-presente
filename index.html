@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>  
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@
 
     header {
       padding: 20px;
-      background-color: rgba(75, 0, 130, 0.8); /* roxo escuro */
+      background-color: rgba(75, 0, 130, 0.8);
       color: #eee;
       border-bottom: 2px solid #fff;
     }
@@ -85,7 +85,7 @@
     }
 
     .recado, .historia, .recado-final {
-      background-color: rgba(255,255,255,0.75); /* tom escuro */
+      background-color: rgba(255,255,255,0.75);
       color: #222;
       margin: 30px auto;
       max-width: 700px;
@@ -96,8 +96,7 @@
     }
 
     .recado-final {
-      background-color: rgba(255,255,255,0.75); /* roxo escuro suave */
-      border-left: 5px solid #8a2be2; /* roxo borda */
+      border-left: 5px solid #8a2be2;
       font-style: italic;
     }
 
@@ -130,7 +129,7 @@
     }
 
     .playlist-button {
-      background-color: #6a0dad; /* roxo escuro */
+      background-color: #6a0dad;
       color: white;
       border: none;
       padding: 12px 25px;
@@ -141,19 +140,19 @@
     }
 
     .playlist-button:hover {
-      background-color: #4b0082; /* ainda mais escuro */
+      background-color: #4b0082;
     }
 
-   .playlist-content {
+    .playlist-content {
       max-height: 0;
       overflow: hidden;
-     transition: max-height 0.6s ease, padding 0.4s ease, opacity 0.4s ease;
-     opacity: 0;
-     padding: 0 20px;
-     background-color: rgba(255,255,255,0.75); /* branco translúcido */
-     color: #222;
-     border-radius: 10px;
-     margin-top: 15px;
+      transition: max-height 0.6s ease, padding 0.4s ease, opacity 0.4s ease;
+      opacity: 0;
+      padding: 0 20px;
+      background-color: rgba(255,255,255,0.75);
+      color: #222;
+      border-radius: 10px;
+      margin-top: 15px;
     }
 
     .playlist-content.show {
@@ -185,9 +184,12 @@
     <h1>Feliz Aniversário! ❤️</h1>
   </header>
 
-  <audio id="audio-player" autoplay></audio>
+  <audio id="audio-player" autoplay controls style="display:none">
+    <source src="scr/msc1.mp3" type="audio/mp3">
+    Seu navegador não suporta áudio.
+  </audio>
 
-<div class="carousel-container" id="carousel">
+ <div class="carousel-container" id="carousel">
     <!-- FOTOS -->
     <img src="scr/foto1.jpg" class="carousel-slide active" alt="Foto 1">
     <img src="scr/foto2.jpg" class="carousel-slide" alt="Foto 2">
@@ -214,7 +216,7 @@
     <img src="scr/foto23.jpeg" class="carousel-slide" alt="Foto 23">
     <img src="scr/foto24.jpg" class="carousel-slide" alt="Foto 24">
     <img src="scr/foto25.jpg" class="carousel-slide" alt="Foto 25">
-
+    
     <video class="carousel-slide" controls>
       <source src="scr/video.mp4" type="video/mp4">
     </video>
@@ -226,6 +228,7 @@
   </div>
 
   <div class="recado">
+    <!-- Texto do recado -->
     <p>
       Feliz Aniversário! Fazem exatamente 1 Ano desde nossa primeira conversa,<br>
       fazem 6 meses (26 semanas) (182 dias) (4.368 horas) (262.080 min) (15.724.800 segundos)<br>
@@ -237,23 +240,22 @@
   </div>
 
   <div class="historia">
+    <!-- Datas importantes -->
     <h2>Um Pouco da Nossa História</h2>
     <ul>
-     <li>24/06/2024 - Aniversário de Luísa e nossas primeiras palavras um com outro</li>
+      <li>24/06/2024 - Aniversário de Luísa e nossas primeiras palavras um com outro</li>
       <li>19/09/2024 - Primeiro Encontro (Academia)</li>
       <li>10/10/2024 - Segundo Encontro, Primeiro Filme (Coringa)</li>
-      <li>31/10/2024 - Primeiro beijo na bochecha, Terceiro encontro, segundo filme (Todo Tempo que Temos)</li>
-      <li>13/11/2024 - Primeiro beijo, Quarto encontro, terceiro filme (Ainda Estou Aqui)</li>
-      <li>15/11/2024 - Primeira vez indo na casa dela e conhecendo a mãe</li>
-      <li>21/11/2024 - Primeiro almoço juntos, Quinto encontro e quarto filme (Wicked)</li>
+      <li>31/10/2024 - Primeiro beijo na bochecha...</li>
+      <li>13/11/2024 - Primeiro beijo...</li>
+      <li>15/11/2024 - Primeira vez indo na casa dela...</li>
+      <li>21/11/2024 - Primeiro almoço juntos...</li>
       <li>01/12/2024 - Sexto encontro, passeio na praia</li>
-      <li>02/12/2024 - Sétimo encontro, quinto filme (Relatos Selvagens), Pedido oficial de namoro</li>
-
+      <li>02/12/2024 - Sétimo encontro, Pedido oficial de namoro</li>
     </ul>
   </div>
 
-
-  <div class="recado-final">
+ <div class="recado-final">
     <p>
       Sabe quando a gente fecha os olhos e imagina como tudo poderia ter sido ainda mais bonito, se tivéssemos tido tempo para crescer lado a lado?<br>
       Se, juntos, tivéssemos construído mais momentos, aprendido ainda mais um com o outro<br><br>
@@ -275,6 +277,7 @@
     </p>
   </div>
 
+
   <div class="playlist-section">
     <button onclick="togglePlaylist()" class="playlist-button">🎵 Um Sentimento</button>
     <div id="playlist-content" class="playlist-content">
@@ -284,20 +287,43 @@
         É como eu quero mostrar o quanto eu te amo. É o que eu quero dizer desde aquele momento. ❤️
       </p>
       <p>
-        👉 <a href="https://open.spotify.com/playlist/5lQVMR35EhsUpnNKNEEtpR?si=9ad6562f847748f4" target="_blank" style="color: #ff3366; font-weight: bold;">Minha forma de me expressar em musica</a>
+        👉 <a href="https://open.spotify.com/playlist/5lQVMR35EhsUpnNKNEEtpR?si=9ad6562f847748f4" target="_blank" style="color: #ff3366; font-weight: bold;">Minha forma de me expressar em música</a>
       </p>
     </div>
   </div>
 
   <script>
-    // Carrossel
     let slideIndex = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const arrows = document.querySelectorAll('.arrow');
     let hideTimeout;
 
+    const audioPlayer = document.getElementById("audio-player");
+    const musicas = [
+      "scr/msc1.mp3",
+      "scr/msc2.mp3",
+      "scr/msc3.mp3",
+      "scr/msc.mp3",
+      "scr/msc.mp3"
+    ];
+    let indice = 0;
+
+    function tocarMusica(index) {
+      if (musicas[index]) {
+        audioPlayer.src = musicas[index];
+        audioPlayer.play().catch(() => {
+          console.log("Reprodução bloqueada pelo navegador.");
+        });
+      }
+    }
+
+    function tocarProxima() {
+      indice = (indice + 1) % musicas.length;
+      tocarMusica(indice);
+    }
+
     function mostrarSlide(index) {
-      slides.forEach((slide, i) => {
+      slides.forEach(slide => {
         slide.classList.remove('active');
         if (slide.tagName === 'VIDEO') {
           slide.pause();
@@ -308,8 +334,13 @@
       slideIndex = (index + slides.length) % slides.length;
       const currentSlide = slides[slideIndex];
       currentSlide.classList.add('active');
-      if (currentSlide.tagName === 'VIDEO') {
+
+      if (currentSlide.tagName === 'VIDEO') { 
         currentSlide.play();
+      } else {
+        if(audioPlayer.paused){
+          tocarMusica(indice);
+        }
       }
     }
 
@@ -335,29 +366,17 @@
     document.getElementById('carousel').addEventListener('mousemove', resetArrowVisibility);
 
     window.onload = () => {
+      tocarMusica(indice);
+      audioPlayer.addEventListener("ended", tocarProxima);
       mostrarSlide(slideIndex);
       resetArrowVisibility();
     };
 
-    // Música
-    const audioPlayer = document.getElementById("audio-player");
-    const musicas = ["scr/msc1.mp3", "scr/msc2.mp3", "scr/msc3.mp3","scr/msc.mp3","scr/msc.mp3","scr/msc.mp3","scr/msc.mp3"];
-    let indice = 0;
-
-    function tocarProxima() {
-      indice = (indice + 1) % musicas.length;
-      audioPlayer.src = musicas[indice];
-      audioPlayer.play();
-    }
-
-    audioPlayer.src = musicas[indice];
-    audioPlayer.addEventListener("ended", tocarProxima);
-
-    // Playlist toggle
     function togglePlaylist() {
       const content = document.getElementById("playlist-content");
       content.classList.toggle("show");
     }
   </script>
+
 </body>
 </html>
