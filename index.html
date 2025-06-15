@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Nosso Amor</title>
+  <title>Feliz Aniversário!</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * {
@@ -27,8 +27,8 @@
 
     header {
       padding: 20px;
-      background-color: rgba(255, 192, 203, 0.8);
-      color: #333;
+      background-color: rgba(75, 0, 130, 0.8); /* roxo escuro */
+      color: #eee;
       border-bottom: 2px solid #fff;
     }
 
@@ -84,13 +84,9 @@
       pointer-events: none;
     }
 
-    .spotify {
-      margin: 30px 0;
-    }
-
     .recado, .historia, .recado-final {
-      background-color: rgba(255, 255, 255, 0.85);
-      color: #333;
+      background-color: rgba(255,255,255,0.75); /* tom escuro */
+      color: #222;
       margin: 30px auto;
       max-width: 700px;
       padding: 20px;
@@ -100,8 +96,8 @@
     }
 
     .recado-final {
-      background-color: rgba(255, 255, 255, 0.75);
-      border-left: 5px solid #f88;
+      background-color: rgba(255,255,255,0.75); /* roxo escuro suave */
+      border-left: 5px solid #8a2be2; /* roxo borda */
       font-style: italic;
     }
 
@@ -122,9 +118,48 @@
     }
 
     .historia li::before {
-      content: "❤️";
+      content: "💜";
       position: absolute;
       left: -20px;
+    }
+
+    .playlist-section {
+      margin: 30px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .playlist-button {
+      background-color: #6a0dad; /* roxo escuro */
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .playlist-button:hover {
+      background-color: #4b0082; /* ainda mais escuro */
+    }
+
+   .playlist-content {
+      max-height: 0;
+      overflow: hidden;
+     transition: max-height 0.6s ease, padding 0.4s ease, opacity 0.4s ease;
+     opacity: 0;
+     padding: 0 20px;
+     background-color: rgba(255,255,255,0.75); /* branco translúcido */
+     color: #222;
+     border-radius: 10px;
+     margin-top: 15px;
+    }
+
+    .playlist-content.show {
+      max-height: 300px;
+      opacity: 1;
+      padding: 20px;
     }
 
     @media (max-width: 600px) {
@@ -141,24 +176,23 @@
       .carousel-container {
         width: 90%;
       }
-
-      .spotify iframe {
-        width: 90% !important;
-      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Nosso Amor ❤️</h1>
+    <h1>Feliz Aniversário! ❤️</h1>
   </header>
 
-  <div class="carousel-container" id="carousel">
+  <audio id="audio-player" autoplay></audio>
+
+<div class="carousel-container" id="carousel">
     <!-- FOTOS -->
     <img src="scr/foto1.jpg" class="carousel-slide active" alt="Foto 1">
     <img src="scr/foto2.jpg" class="carousel-slide" alt="Foto 2">
     <img src="scr/foto3.jpg" class="carousel-slide" alt="Foto 3">
+    <img src="scr/foto4.jpg" class="carousel-slide" alt="Foto 4">
     <img src="scr/foto5.jpg" class="carousel-slide" alt="Foto 5">
     <img src="scr/foto6.jpg" class="carousel-slide" alt="Foto 6">
     <img src="scr/foto7.jpg" class="carousel-slide" alt="Foto 7">
@@ -181,20 +215,14 @@
     <img src="scr/foto24.jpg" class="carousel-slide" alt="Foto 24">
     <img src="scr/foto25.jpg" class="carousel-slide" alt="Foto 25">
 
-    <!-- VÍDEOS -->
     <video class="carousel-slide" controls>
       <source src="scr/video.mp4" type="video/mp4">
     </video>
     <video class="carousel-slide" controls>
       <source src="scr/videofavorito.mp4" type="video/mp4">
     </video>
-  
     <button class="arrow left" onclick="mudarSlide(-1)" id="arrowLeft">❮</button>
     <button class="arrow right" onclick="mudarSlide(1)" id="arrowRight">❯</button>
-  </div>
-
-  <div class="spotify">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5lQVMR35EhsUpnNKNEEtpR?utm_source=generator&theme=0" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
   <div class="recado">
@@ -211,7 +239,7 @@
   <div class="historia">
     <h2>Um Pouco da Nossa História</h2>
     <ul>
-      <li>24/06/2024 - Aniversário de Luísa e nossas primeiras palavras um com outro</li>
+     <li>24/06/2024 - Aniversário de Luísa e nossas primeiras palavras um com outro</li>
       <li>19/09/2024 - Primeiro Encontro (Academia)</li>
       <li>10/10/2024 - Segundo Encontro, Primeiro Filme (Coringa)</li>
       <li>31/10/2024 - Primeiro beijo na bochecha, Terceiro encontro, segundo filme (Todo Tempo que Temos)</li>
@@ -220,38 +248,49 @@
       <li>21/11/2024 - Primeiro almoço juntos, Quinto encontro e quarto filme (Wicked)</li>
       <li>01/12/2024 - Sexto encontro, passeio na praia</li>
       <li>02/12/2024 - Sétimo encontro, quinto filme (Relatos Selvagens), Pedido oficial de namoro</li>
+
     </ul>
   </div>
+
 
   <div class="recado-final">
     <p>
       Sabe quando a gente fecha os olhos e imagina como tudo poderia ter sido ainda mais bonito, se tivéssemos tido tempo para crescer lado a lado?<br>
       Se, juntos, tivéssemos construído mais momentos, aprendido ainda mais um com o outro<br><br>
-
       Podemos amadurecer sozinhos — o que torna tudo mais difícil.<br>
       Ou podemos amadurecer juntos — o que torna tudo mais leve. <br>
       Afinal, a união faz a força.<br><br>
-
       Esse não é um simples presente.<br>
-      É um retrato do quanto você foi e continua sendo alguém muito importante para mim.<br><br> <!--Fazer mudança em muito e importante -->
-
+      É um retrato do quanto você foi e continua sendo alguém muito importante para mim.<br><br>
       A vida às vezes nos leva por caminhos diferentes.<br>
       Mas mesmo que os caminhos sejam diferentes, a gente pode estar junto.<br>
       Porque... quem disse que caminhos diferentes não podem seguir lado a lado?<br>
       Nunca é tarde demais pra recomeçar o que é verdadeiro.<br>
       Tudo que vivemos foi real, bonito e vale a pena.<br><br>
-
       Gratidão por tudo, por cada momento, por me fazer crescer.<br>
       Entrego este presente com o mesmo carinho de quando comecei, e até com mais.<br><br>
-
       E... eu espero te encontrar novamente. 💫<br><br>
-
       Com amor,<br>
       Arthur 💖
     </p>
   </div>
 
+  <div class="playlist-section">
+    <button onclick="togglePlaylist()" class="playlist-button">🎵 Um Sentimento</button>
+    <div id="playlist-content" class="playlist-content">
+      <p>
+        A música é uma forma de se expressar. Quando ouvimos música, ouvimos aquilo que queremos expressar.<br>
+        Então, essa playlist é como eu quero me expressar.<br>
+        É como eu quero mostrar o quanto eu te amo. É o que eu quero dizer desde aquele momento. ❤️
+      </p>
+      <p>
+        👉 <a href="https://open.spotify.com/playlist/5lQVMR35EhsUpnNKNEEtpR?si=9ad6562f847748f4" target="_blank" style="color: #ff3366; font-weight: bold;">Minha forma de me expressar em musica</a>
+      </p>
+    </div>
+  </div>
+
   <script>
+    // Carrossel
     let slideIndex = 0;
     const slides = document.querySelectorAll('.carousel-slide');
     const arrows = document.querySelectorAll('.arrow');
@@ -267,10 +306,8 @@
       });
 
       slideIndex = (index + slides.length) % slides.length;
-
       const currentSlide = slides[slideIndex];
       currentSlide.classList.add('active');
-
       if (currentSlide.tagName === 'VIDEO') {
         currentSlide.play();
       }
@@ -301,7 +338,26 @@
       mostrarSlide(slideIndex);
       resetArrowVisibility();
     };
-  </script>
 
+    // Música
+    const audioPlayer = document.getElementById("audio-player");
+    const musicas = ["scr/msc1.mp3", "scr/msc2.mp3", "scr/msc3.mp3","scr/msc.mp3","scr/msc.mp3","scr/msc.mp3","scr/msc.mp3"];
+    let indice = 0;
+
+    function tocarProxima() {
+      indice = (indice + 1) % musicas.length;
+      audioPlayer.src = musicas[indice];
+      audioPlayer.play();
+    }
+
+    audioPlayer.src = musicas[indice];
+    audioPlayer.addEventListener("ended", tocarProxima);
+
+    // Playlist toggle
+    function togglePlaylist() {
+      const content = document.getElementById("playlist-content");
+      content.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
